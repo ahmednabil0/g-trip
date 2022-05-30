@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:g_trip/helper/consts.dart';
+import 'package:g_trip/veiw/Auth_veiw/sign_up_veiw.dart';
 import 'package:g_trip/veiw/widgets/bigbutton.dart';
 import 'package:g_trip/veiw/widgets/customtext.dart';
 import 'package:g_trip/veiw_model/auth_veiw_model.dart';
@@ -190,11 +191,16 @@ class SignInView extends GetWidget<AuthViewModel> {
                                     ),
                                   ),
                                   SizedBox(width: Get.width * 0.03),
-                                  customText(
-                                    color: fontColor,
-                                    txt: 'Sign Up',
-                                    size: Get.width * 0.04,
-                                    fw: FontWeight.w800,
+                                  InkWell(
+                                    onTap: () {
+                                      Get.to(() => SignUpView());
+                                    },
+                                    child: customText(
+                                      color: fontColor,
+                                      txt: 'Sign Up',
+                                      size: Get.width * 0.04,
+                                      fw: FontWeight.w800,
+                                    ),
                                   )
                                 ],
                               ),

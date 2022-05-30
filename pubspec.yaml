@@ -37,6 +37,7 @@ dependencies:
   get: ^4.6.5
   flutter_svg: ^1.0.3
   email_validator: ^2.0.1
+  country_list_pick: ^1.0.1+5
 
 
 dev_dependencies:

@@ -1,12 +1,24 @@
 // import 'package:cloud_firestore/cloud_firestore.dart';
 // import 'package:ecommerce/views/home_view/home_view.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
+import 'package:country_list_pick/country_list_pick.dart';
 import 'package:get/get.dart';
 
 class AuthViewModel extends GetxController {
   // CollectionReference reff = FirebaseFirestore.instance.collection('users');
   bool opscur = true;
   bool checked = false;
+  String dialCodeInitial = '+20';
+  CountryCode? selected;
+  void selcted(CountryCode code) {
+    if (code.dialCode != null) {
+      dialCodeInitial = code.dialCode!;
+    } else {
+      print('error =>>>> code.dialCode = null');
+    }
+    update();
+  }
+
   void isops() {
     opscur = !opscur;
     update();
