@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "854369295215",
+    "project_id": "gtrip-app",
+    "storage_bucket": "gtrip-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:854369295215:android:17deaee061ced3ace3e69a",
+        "android_client_info": {
+          "package_name": "com.example.g_trip"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "854369295215-oqan29epagnj08gnh3n4972nfnhqcqt1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDARkZfFjtN7zgKSQlGeGkOh4ET4GLrT04"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "854369295215-oqan29epagnj08gnh3n4972nfnhqcqt1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

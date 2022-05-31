@@ -18,6 +18,9 @@ class SignUpView extends GetWidget<AuthViewModel> {
   final TextEditingController emailCont = TextEditingController();
   final TextEditingController passCont = TextEditingController();
   final TextEditingController nameCont = TextEditingController();
+  final TextEditingController phoneCont = TextEditingController();
+  final TextEditingController userCont = TextEditingController();
+  final TextEditingController conPassCont = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -108,10 +111,10 @@ class SignUpView extends GetWidget<AuthViewModel> {
                                 fontWeight: FontWeight.w400),
                           ),
                           TextFormField(
-                            controller: nameCont,
+                            controller: phoneCont,
                             validator: (value) {
                               if (value == null || value.isEmpty) {
-                                return "please enter name";
+                                return "please enter your phone";
                               }
                               return null;
                             },
@@ -136,7 +139,7 @@ class SignUpView extends GetWidget<AuthViewModel> {
                                   // initialSelection: 'US'
                                 ),
                                 suffixIcon: const Icon(Icons.phone_outlined),
-                                hintText: '01025125445',
+                                hintText: '1025125445',
                                 hintStyle: TextStyle(
                                     color: Colors.grey.withOpacity(0.8),
                                     fontWeight: FontWeight.w500)),
@@ -151,10 +154,10 @@ class SignUpView extends GetWidget<AuthViewModel> {
                                 fontWeight: FontWeight.w400),
                           ),
                           TextFormField(
-                            controller: nameCont,
+                            controller: userCont,
                             validator: (value) {
                               if (value == null || value.isEmpty) {
-                                return "please enter name";
+                                return "please enter userName";
                               }
                               return null;
                             },
@@ -223,10 +226,13 @@ class SignUpView extends GetWidget<AuthViewModel> {
                                 fontWeight: FontWeight.w400),
                           ),
                           TextFormField(
-                            controller: passCont,
-                            validator: ((value) {
+                            controller: conPassCont,
+                            validator: (value) {
                               if (value == null || value.isEmpty) {
                                 return "please enter password";
+                              }
+                              if (value != passCont.text) {
+                                return "wrong password";
                               }
                               if (!RegExp(r'^(?=.*?[0-9]).{8,}$')
                                   .hasMatch(value)) {
@@ -236,7 +242,7 @@ class SignUpView extends GetWidget<AuthViewModel> {
                                 return "to big";
                               }
                               return null;
-                            }),
+                            },
                             keyboardType: TextInputType.visiblePassword,
                             obscureText: controller.opscur,
                             decoration: InputDecoration(
@@ -267,12 +273,15 @@ class SignUpView extends GetWidget<AuthViewModel> {
                             child: BigButton(
                                 txt: 'SIGN Up ',
                                 ontap: () async {
-                                  // if (_key.currentState!.validate()) {
-                                  //   await controller.signUp(emailCont.text,
-                                  //       passCont.text, nameCont.text
-
-                                  //       );
-                                  // }
+                                  if (_key.currentState!.validate()) {
+                                    await controller.signUp(
+                                        emailCont.text,
+                                        passCont.text,
+                                        nameCont.text,
+                                        controller.dialCodeInitial +
+                                            phoneCont.text,
+                                        userCont.text);
+                                  }
                                 }),
                           ),
                           SizedBox(

@@ -173,10 +173,10 @@ class SignInView extends GetWidget<AuthViewModel> {
                               BigButton(
                                   txt: 'Login ',
                                   ontap: () async {
-                                    // if (_key.currentState!.validate()) {
-                                    //   await controller.signIn(
-                                    //       emailCont.text, passCont.text);
-                                    // }
+                                    if (_key.currentState!.validate()) {
+                                      await controller.signIn(
+                                          emailCont.text, passCont.text);
+                                    }
                                   }),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,

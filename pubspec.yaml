@@ -39,6 +39,10 @@ dependencies:
   email_validator: ^2.0.1
   country_list_pick: ^1.0.1+5
   google_nav_bar: ^5.0.6
+  firebase_core: ^1.14.0
+  firebase_auth: ^3.3.13
+  cloud_firestore: ^3.1.13
+
 
 
 dev_dependencies:
