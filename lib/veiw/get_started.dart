@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:g_trip/helper/consts.dart';
 import 'package:g_trip/veiw/Auth_veiw/sign_in_veiw.dart';
+import 'package:g_trip/veiw/Auth_veiw/sign_up_driver.dart';
 import 'package:g_trip/veiw/widgets/customtext.dart';
 import 'package:g_trip/veiw/widgets/getstarted.dart';
 import 'package:g_trip/veiw/widgets/getstertedbutton.dart';
@@ -27,8 +28,12 @@ class _GetStartedViewState extends State<GetStartedView> {
           child: Stack(children: [
             const getSterted(),
             Positioned(
-                top: Get.height * 600 / 896,
-                left: Get.height * 80 / 896,
+                bottom: Get.height * 270 / 896,
+                right: Get.height * 0 / 896,
+                child: Image.asset('assets/images/selogo.png')),
+            Positioned(
+                top: Get.height * 620 / 896,
+                left: Get.height * 50 / 896,
                 child: Container(
                   height: Get.height * 41 / 896,
                   padding: EdgeInsets.symmetric(
@@ -76,7 +81,9 @@ class _GetStartedViewState extends State<GetStartedView> {
                 bottom: Get.height * 25 / 896,
                 right: Get.height * 15 / 896,
                 child: getStartedButton(ontap: () {
-                  Get.to(SignInView());
+                  selecteditem == 'customer'
+                      ? Get.to(SignInView())
+                      : Get.to(() => const SignUpDriverVeiw());
                 }))
           ])),
     );

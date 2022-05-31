@@ -14,7 +14,8 @@ class AuthViewModel extends GetxController {
     if (code.dialCode != null) {
       dialCodeInitial = code.dialCode!;
     } else {
-      print('error =>>>> code.dialCode = null');
+      // ignore: avoid_returning_null_for_void
+      return null;
     }
     update();
   }

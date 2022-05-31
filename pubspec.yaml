@@ -38,6 +38,7 @@ dependencies:
   flutter_svg: ^1.0.3
   email_validator: ^2.0.1
   country_list_pick: ^1.0.1+5
+  google_nav_bar: ^5.0.6
 
 
 dev_dependencies:
@@ -72,6 +73,9 @@ flutter:
     - assets/svg/twitter.svg
     - assets/svg/line.svg
     - assets/svg/key.svg
+    - assets/svg/hi.svg
+    - assets/images/selogo.png
+    
 
 
 
