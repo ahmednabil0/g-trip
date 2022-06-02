@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:g_trip/helper/consts.dart';
-import 'package:g_trip/veiw/home/explore.dart';
-import 'package:g_trip/veiw/home/help.dart';
-import 'package:g_trip/veiw/home/history.dart';
-import 'package:g_trip/veiw/home/more.dart';
+import 'package:g_trip/veiw/homeUSer/explore.dart';
+import 'package:g_trip/veiw/homeUSer/help.dart';
+import 'package:g_trip/veiw/homeUSer/history.dart';
+import 'package:g_trip/veiw/homeUSer/more.dart';
+
 import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 

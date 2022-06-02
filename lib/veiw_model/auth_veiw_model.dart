@@ -3,13 +3,18 @@
 // import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:country_list_pick/country_list_pick.dart';
+import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:g_trip/veiw/home/home.dart';
+import 'package:g_trip/veiw/homeUSer/home.dart';
 import 'package:get/get.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthViewModel extends GetxController {
+  final GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
+  final FirebaseAuth _auth = FirebaseAuth.instance;
   CollectionReference reff = FirebaseFirestore.instance.collection('users');
   bool opscur = true;
+  bool isEmail = true;
   bool checked = false;
   String dialCodeInitial = '+20';
   CountryCode? selected;
@@ -19,6 +24,15 @@ class AuthViewModel extends GetxController {
     } else {
       // ignore: avoid_returning_null_for_void
       return null;
+    }
+    update();
+  }
+
+  // ignore: non_constant_identifier_names
+  void IsEmail(String txt) {
+    isEmail = true;
+    if (!EmailValidator.validate(txt)) {
+      isEmail = false;
     }
     update();
   }
@@ -78,5 +92,26 @@ class AuthViewModel extends GetxController {
   //   // ignore: unnecessary_null_comparison
 
 // sign in with goegle
+  void googleSignInMethod() async {
+    final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+    GoogleSignInAuthentication googleSignInAuthentication =
+        await googleUser!.authentication;
 
+    final AuthCredential credential = GoogleAuthProvider.credential(
+      idToken: googleSignInAuthentication.idToken,
+      accessToken: googleSignInAuthentication.accessToken,
+    );
+
+    await _auth.signInWithCredential(credential).then((user) {
+      reff.doc().set({
+        'email': user.user!.email,
+        'name': user.user!.displayName,
+        'uid': user.user!.uid,
+        'phoneNum': user.user!.phoneNumber,
+        'userName': user.user!.displayName,
+      });
+
+      Get.to(const HomeVeiw());
+    });
+  }
 }

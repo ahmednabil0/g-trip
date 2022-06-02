@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:g_trip/helper/consts.dart';
@@ -174,8 +175,21 @@ class SignInView extends GetWidget<AuthViewModel> {
                                   txt: 'Login ',
                                   ontap: () async {
                                     if (_key.currentState!.validate()) {
+                                      String? username;
+                                      FirebaseFirestore.instance
+                                          .collection('users')
+                                          .where('userName',
+                                              isEqualTo: emailCont.text)
+                                          .get()
+                                          .then((value) {
+                                        username = value.docs[0]['email'];
+                                      });
+
                                       await controller.signIn(
-                                          emailCont.text, passCont.text);
+                                          controller.isEmail
+                                              ? emailCont.text
+                                              : username!,
+                                          passCont.text);
                                     }
                                   }),
                               Row(
@@ -225,10 +239,24 @@ class SignInView extends GetWidget<AuthViewModel> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                SvgPicture.asset('assets/svg/goegle.svg'),
-                                SvgPicture.asset('assets/svg/githup.svg'),
-                                SvgPicture.asset('assets/svg/twitter.svg'),
-                                SvgPicture.asset('assets/svg/facebook.svg'),
+                                InkWell(
+                                    onTap: () async {
+                                      controller.googleSignInMethod();
+                                    },
+                                    child: SvgPicture.asset(
+                                        'assets/svg/goegle.svg')),
+                                InkWell(
+                                    onTap: () {},
+                                    child: SvgPicture.asset(
+                                        'assets/svg/githup.svg')),
+                                InkWell(
+                                    onTap: () {},
+                                    child: SvgPicture.asset(
+                                        'assets/svg/twitter.svg')),
+                                InkWell(
+                                    onTap: () {},
+                                    child: SvgPicture.asset(
+                                        'assets/svg/facebook.svg')),
                               ],
                             ),
                           ),

@@ -118,7 +118,7 @@ class SignUpView extends GetWidget<AuthViewModel> {
                               }
                               return null;
                             },
-                            keyboardType: TextInputType.name,
+                            keyboardType: TextInputType.phone,
                             decoration: InputDecoration(
                                 prefixIcon: CountryListPick(
                                   useSafeArea: false,
@@ -298,7 +298,7 @@ class SignUpView extends GetWidget<AuthViewModel> {
                                         fontWeight: FontWeight.w400),
                                   ),
                                 ),
-                                SizedBox(width: Get.width * 0.03),
+                                SizedBox(width: Get.width * 0.02),
                                 InkWell(
                                   onTap: () {
                                     Get.to(() => SignInView());
