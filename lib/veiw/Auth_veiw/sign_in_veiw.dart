@@ -175,8 +175,8 @@ class SignInView extends GetWidget<AuthViewModel> {
                                   txt: 'Login ',
                                   ontap: () async {
                                     if (_key.currentState!.validate()) {
-                                      String? username;
-                                      FirebaseFirestore.instance
+                                      late String username;
+                                      await FirebaseFirestore.instance
                                           .collection('users')
                                           .where('userName',
                                               isEqualTo: emailCont.text)
@@ -184,11 +184,11 @@ class SignInView extends GetWidget<AuthViewModel> {
                                           .then((value) {
                                         username = value.docs[0]['email'];
                                       });
-
+                                      controller.IsEmail(emailCont.text);
                                       await controller.signIn(
                                           controller.isEmail
                                               ? emailCont.text
-                                              : username!,
+                                              : username,
                                           passCont.text);
                                     }
                                   }),

@@ -33,6 +33,7 @@ class AuthViewModel extends GetxController {
     isEmail = true;
     if (!EmailValidator.validate(txt)) {
       isEmail = false;
+      update();
     }
     update();
   }
