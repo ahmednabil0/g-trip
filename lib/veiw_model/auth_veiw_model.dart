@@ -5,6 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:country_list_pick/country_list_pick.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:g_trip/veiw/homeUSer/home.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -40,6 +41,18 @@ class AuthViewModel extends GetxController {
 
   void isops() {
     opscur = !opscur;
+    update();
+  }
+
+  DateTime dateTime = DateTime(15, 1, 1992);
+  Future<void> ubdateDAet(context) async {
+    // ignore: unused_local_variable
+    DateTime? newDate = await showDatePicker(
+        context: context,
+        initialDate: dateTime,
+        firstDate: DateTime(1980),
+        lastDate: DateTime(21000));
+
     update();
   }
 

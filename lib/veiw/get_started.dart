@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:g_trip/helper/consts.dart';
+import 'package:g_trip/veiw/Auth_veiw/sign_in_driver/sign_in_veiw.dart';
 import 'package:g_trip/veiw/Auth_veiw/sign_in_veiw.dart';
 import 'package:g_trip/veiw/Auth_veiw/sign_up_driver.dart';
 import 'package:g_trip/veiw/widgets/customtext.dart';
@@ -83,7 +84,7 @@ class _GetStartedViewState extends State<GetStartedView> {
                 child: getStartedButton(ontap: () {
                   selecteditem == 'customer'
                       ? Get.to(SignInView())
-                      : Get.to(() => const SignUpDriverVeiw());
+                      : Get.to(() => SignInDdiverView());
                 }))
           ])),
     );
