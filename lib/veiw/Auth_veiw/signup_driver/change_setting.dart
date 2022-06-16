@@ -342,7 +342,8 @@ class ChangeSettingDriverVeiw extends GetWidget<AuthDriverVeiwModel> {
                                       controller.signUp(
                                           controller.emailCont.text,
                                           controller.nameCont.text,
-                                          controller.phoneCont.text,
+                                          controller.dialCodeInitial +
+                                              controller.phoneCont.text,
                                           controller.dateCont.text,
                                           controller.addresCont.text,
                                           controller.ctypeCont.text,

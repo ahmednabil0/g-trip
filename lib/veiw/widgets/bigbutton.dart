@@ -29,3 +29,32 @@ class BigButton extends StatelessWidget {
     );
   }
 }
+
+class BigButton2 extends StatelessWidget {
+  const BigButton2({Key? key, required this.txt, required this.ontap})
+      : super(key: key);
+  final String txt;
+  final void Function() ontap;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: ontap,
+      child: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.only(top: 20),
+        height: Get.height * 0.043,
+        width: Get.width * 0.48,
+        decoration: BoxDecoration(
+            color: primaryColor, borderRadius: BorderRadius.circular(5)),
+        child: Text(
+          txt,
+          style: TextStyle(
+            color: backgroundColor,
+            fontSize: Get.width * 0.032,
+          ),
+        ),
+      ),
+    );
+  }
+}

@@ -33,7 +33,7 @@ class SignUpDriverVeiw extends GetWidget<AuthDriverVeiwModel> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(
-                          height: Get.height * 50 / 896,
+                          height: Get.height * 90 / 896,
                           child: Stack(children: [
                             TabBar(
                               physics: const BouncingScrollPhysics(),
@@ -50,7 +50,7 @@ class SignUpDriverVeiw extends GetWidget<AuthDriverVeiwModel> {
                                     customText(
                                         color: fontColor,
                                         txt: '01',
-                                        size: Get.height * 20 / 896),
+                                        size: Get.height * 14 / 896),
                                     const Text('Personal Info',
                                         style: TextStyle(
                                             color: Colors.black,
@@ -62,7 +62,7 @@ class SignUpDriverVeiw extends GetWidget<AuthDriverVeiwModel> {
                                     customText(
                                         color: fontColor,
                                         txt: '02',
-                                        size: Get.height * 20 / 896),
+                                        size: Get.height * 14 / 896),
                                     const Text('Personal Info',
                                         style: TextStyle(
                                             color: Colors.black,
@@ -74,7 +74,7 @@ class SignUpDriverVeiw extends GetWidget<AuthDriverVeiwModel> {
                                     customText(
                                         color: fontColor,
                                         txt: '03',
-                                        size: Get.height * 20 / 896),
+                                        size: Get.height * 14 / 896),
                                     const Text('Change Settings',
                                         style: TextStyle(
                                             color: Colors.black,

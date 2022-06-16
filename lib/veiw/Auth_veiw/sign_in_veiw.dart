@@ -185,7 +185,7 @@ class SignInView extends GetWidget<AuthViewModel> {
                                         username = value.docs[0]['email'];
                                       });
                                       controller.IsEmail(emailCont.text);
-                                      await controller.signIn(
+                                      controller.signIn(
                                           controller.isEmail
                                               ? emailCont.text
                                               : username,

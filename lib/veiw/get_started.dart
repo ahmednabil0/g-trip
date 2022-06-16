@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:g_trip/helper/consts.dart';
 import 'package:g_trip/veiw/Auth_veiw/sign_in_driver/sign_in_veiw.dart';
 import 'package:g_trip/veiw/Auth_veiw/sign_in_veiw.dart';
-import 'package:g_trip/veiw/Auth_veiw/sign_up_driver.dart';
 import 'package:g_trip/veiw/widgets/customtext.dart';
 import 'package:g_trip/veiw/widgets/getstarted.dart';
 import 'package:g_trip/veiw/widgets/getstertedbutton.dart';

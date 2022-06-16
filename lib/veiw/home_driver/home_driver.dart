@@ -18,7 +18,7 @@ class HomeDriverVeiw extends StatefulWidget {
 class _HomeDriverVeiwState extends State<HomeDriverVeiw> {
   int currenntIndex = 0;
   List<Widget> bodyList = [
-    const ExploreDriverVeiw(),
+    ExploreDriverVeiw(),
     const HistoryDriverVeiw(),
     const HelpDriverVeiw(),
     const InfoDriverVeiw()

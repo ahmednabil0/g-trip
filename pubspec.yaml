@@ -53,7 +53,9 @@ dependencies:
   flutter_secure_storage: ^5.0.2
   fluttertoast: ^8.0.9
   image_picker: ^0.8.5+3
-
+  google_maps_flutter: ^2.1.7
+  geolocator: ^8.2.1
+  
 
 
 dev_dependencies:

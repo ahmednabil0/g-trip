@@ -18,7 +18,7 @@ class HomeVeiw extends StatefulWidget {
 class _HomeVeiwState extends State<HomeVeiw> {
   int currenntIndex = 0;
   List<Widget> bodyList = [
-    const ExploreVeiw(),
+    ExploreVeiw(),
     const HistoryVeiw(),
     const HelpVeiw(),
     const MoreInfoVeiw()

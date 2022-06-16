@@ -37,7 +37,7 @@ class AuthDriverVeiwModel extends GetxController {
         email: email, password: password);
     // ignore: unnecessary_null_comparison
     if (results != null) {
-      reff.doc().set({
+      reff.doc(firebaseAuth.currentUser!.uid).set({
         'email': email,
         'name': name,
         'uid': firebaseAuth.currentUser!.uid,
@@ -58,6 +58,8 @@ class AuthDriverVeiwModel extends GetxController {
         'bankname': bankname,
         'driverid': driverid,
         'drivername': drivername,
+        'lat': 0,
+        'long': 0,
       });
       Get.snackbar('Ok', 'sucess Sign Up');
       Get.to(() => const HomeDriverVeiw());
