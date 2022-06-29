@@ -55,6 +55,10 @@ dependencies:
   image_picker: ^0.8.5+3
   google_maps_flutter: ^2.1.7
   geolocator: ^8.2.1
+  geocoding: ^2.0.4
+  flutter_google_places: ^0.3.0
+  location: ^4.1.1
+  
   
 
 
@@ -92,7 +96,10 @@ flutter:
     - assets/svg/key.svg
     - assets/svg/hi.svg
     - assets/images/selogo.png
+    - assets/images/carmarker.png
+    - assets/images/marker.png
     - assets/svg/New Text Document.svg
+    - assets/svg/New Text Document (2).svg
     
 
 

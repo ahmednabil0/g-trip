@@ -8,10 +8,12 @@ class RowCol extends StatelessWidget {
   RowCol({
     required this.txt,
     required this.icon,
+    required this.color,
     Key? key,
   }) : super(key: key);
   String txt;
   IconData icon;
+  Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +24,7 @@ class RowCol extends StatelessWidget {
           margin: EdgeInsets.only(left: Get.width * 0.035),
           width: Get.height * 0.07,
           height: Get.height * 0.07,
-          decoration:
-              const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+          decoration: BoxDecoration(color: color, shape: BoxShape.circle),
           child: Icon(
             icon,
             size: Get.height * 0.065,

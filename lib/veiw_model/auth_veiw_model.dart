@@ -68,13 +68,16 @@ class AuthViewModel extends GetxController {
         email: email, password: password);
     // ignore: unnecessary_null_comparison
     if (results != null) {
-      reff.doc().set({
+      reff.doc(firebaseAuth.currentUser!.uid).set({
         'email': email,
         'name': name,
         'uid': firebaseAuth.currentUser!.uid,
         'phoneNum': phoneNum,
         'userName': userName,
-        'password': password
+        'password': password,
+        'wallet': 0.0,
+        'lat': 0.0,
+        'long': 0.0
       });
       Get.snackbar('Ok', 'sucess Sign Up');
       Get.to(() => const HomeVeiw());
