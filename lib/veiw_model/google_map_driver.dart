@@ -36,7 +36,7 @@ class GoogleVeiwDriverModel extends GetxController {
     String destance = '${diskm.toStringAsFixed(2)}km';
 
     List<Placemark> source =
-        await placemarkFromCoordinates(latc ??= 0.0, longc ??= 0.0);
+        await placemarkFromCoordinates(latc ??= 31.005479, longc ??= 31.006004);
     List<Placemark> destination =
         await placemarkFromCoordinates(latd ??= 31.005479, longd ??= 31.006004);
     await refData.doc(FirebaseAuth.instance.currentUser!.uid).set({
@@ -50,7 +50,10 @@ class GoogleVeiwDriverModel extends GetxController {
       'longd': longd ??= 0.0,
       'end': false,
       'starttime': '',
-      'endtime': ''
+      'endtime': '',
+      'pay': false,
+      'paytype': '',
+      'type': carType
     });
   }
 
@@ -80,7 +83,7 @@ class GoogleVeiwDriverModel extends GetxController {
         region: "ar",
         context: context,
         apiKey: 'AIzaSyCJ1n1vthLwdbp4UK81_VJ63e3FeRqIZZw',
-        mode: Mode.overlay,
+        mode: Mode.fullscreen,
         language: "ar",
         components: [Component(Component.country, "ar")]);
     getLocationFromPlaceId(p!.placeId!);
