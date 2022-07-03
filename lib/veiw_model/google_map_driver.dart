@@ -49,11 +49,13 @@ class GoogleVeiwDriverModel extends GetxController {
       'latd': latd ??= 0.0,
       'longd': longd ??= 0.0,
       'end': false,
-      'starttime': '',
-      'endtime': '',
+      'drivername': '',
+      'changesPerKilo': '',
       'pay': false,
       'paytype': '',
-      'type': carType
+      'type': carType,
+      'liveLat': 0.0,
+      'livelong': 0.0,
     });
   }
 

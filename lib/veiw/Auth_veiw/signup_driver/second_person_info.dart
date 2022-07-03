@@ -1,9 +1,7 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 
 import 'package:g_trip/veiw_model/auth-driver-veiw-model.dart';
-
 import '../../widgets/bigbutton.dart';
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -126,31 +124,7 @@ class SecondInfoDriverVeiw extends GetWidget<AuthDriverVeiwModel> {
                                     prefixIcon: Column(
                                       children: [
                                         ElevatedButton(
-                                            onPressed: () async {
-                                              FilePickerResult? result =
-                                                  await FilePicker.platform
-                                                      .pickFiles();
-
-                                              if (result != null) {
-                                                PlatformFile file =
-                                                    result.files.first;
-
-                                                // // ignore: avoid_print
-                                                // print(file.name);
-                                                // // ignore: avoid_print
-                                                // print(file.bytes);
-                                                // // ignore: avoid_print
-                                                // print(file.size);
-                                                // // ignore: avoid_print
-                                                // print(file.extension);
-                                                // // ignore: avoid_print
-                                                // print(file.path);
-                                                controller.cpaperCont.text =
-                                                    file.name;
-                                              } else {
-                                                // User canceled the picker
-                                              }
-                                            },
+                                            onPressed: () async {},
                                             child: const Text(
                                               "Browse",
                                               style: TextStyle(
@@ -190,21 +164,7 @@ class SecondInfoDriverVeiw extends GetWidget<AuthDriverVeiwModel> {
                                     prefixIcon: Column(
                                       children: [
                                         ElevatedButton(
-                                            onPressed: () async {
-                                              FilePickerResult? result =
-                                                  await FilePicker.platform
-                                                      .pickFiles();
-
-                                              if (result != null) {
-                                                // ignore: unused_local_variable
-                                                PlatformFile file =
-                                                    result.files.first;
-                                                controller.licencesCont.text =
-                                                    file.name;
-                                              } else {
-                                                // User canceled the picker
-                                              }
-                                            },
+                                            onPressed: () async {},
                                             child: const Text(
                                               "Browse",
                                               style: TextStyle(
@@ -243,21 +203,7 @@ class SecondInfoDriverVeiw extends GetWidget<AuthDriverVeiwModel> {
                                     prefixIcon: Column(
                                       children: [
                                         ElevatedButton(
-                                            onPressed: () async {
-                                              FilePickerResult? result =
-                                                  await FilePicker.platform
-                                                      .pickFiles();
-
-                                              if (result != null) {
-                                                // ignore: unused_local_variable
-                                                PlatformFile file =
-                                                    result.files.first;
-                                                controller.idCont.text =
-                                                    file.name;
-                                              } else {
-                                                // User canceled the picker
-                                              }
-                                            },
+                                            onPressed: () async {},
                                             child: const Text(
                                               "Browse",
                                               style: TextStyle(

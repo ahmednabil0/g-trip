@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:g_trip/helper/consts.dart';
-import 'package:g_trip/veiw/home_driver/explore_driver.dart';
+import 'package:g_trip/veiw/home_driver/explore/explore_driver.dart';
 import 'package:g_trip/veiw/home_driver/help_driver.dart';
 import 'package:g_trip/veiw/home_driver/history_driver.dart';
 import 'package:g_trip/veiw/home_driver/info_driver.dart';

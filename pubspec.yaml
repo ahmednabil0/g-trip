@@ -46,12 +46,6 @@ dependencies:
   flutter_facebook_auth: ^4.3.4
   md2_tab_indicator: ^1.0.2
   container_tab_indicator: ^0.3.0
-  file_picker: ^4.6.1
-  flutter_form_builder: ^7.2.1
-  form_builder_file_picker: ^2.1.0
-  open_file: ^3.2.1
-  flutter_secure_storage: ^5.0.2
-  fluttertoast: ^8.0.9
   image_picker: ^0.8.5+3
   google_maps_flutter: ^2.1.7
   geolocator: ^8.2.1

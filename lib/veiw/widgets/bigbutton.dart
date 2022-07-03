@@ -58,3 +58,31 @@ class BigButton2 extends StatelessWidget {
     );
   }
 }
+
+class BigButton3 extends StatelessWidget {
+  const BigButton3({Key? key, required this.txt, required this.ontap})
+      : super(key: key);
+  final String txt;
+  final void Function() ontap;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: ontap,
+      child: Container(
+        alignment: Alignment.center,
+        height: Get.height * 0.040,
+        width: Get.width * 0.17,
+        decoration: BoxDecoration(
+            color: primaryColor, borderRadius: BorderRadius.circular(10)),
+        child: Text(
+          txt,
+          style: TextStyle(
+              color: backgroundColor,
+              fontSize: Get.width * 0.038,
+              fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
+  }
+}
